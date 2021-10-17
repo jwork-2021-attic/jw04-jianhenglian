@@ -1,14 +1,17 @@
 package com.anish.calabashbros;
 
+//观察发现，world本身已经是一个方阵了，写作业的时候要考虑考虑如何运用这个性质
 public class World {
-
-    public static final int WIDTH = 40;
-    public static final int HEIGHT = 20;
+    //它奶奶个腿，这个WIDTH,Height上去就被使用了，我们改是后面的，也就是说一个world多大创建前就已经确定了
+    //行了，解决一个小问题
+    public static int WIDTH = 60;
+    public static int HEIGHT = 60;
 
     private Tile<Thing>[][] tiles;
 
-    public World() {
-
+    public World(int row, int column) {
+        WIDTH = row;
+        HEIGHT = column;
         if (tiles == null) {
             tiles = new Tile[WIDTH][HEIGHT];
         }
@@ -19,6 +22,10 @@ public class World {
                 tiles[i][j].setThing(new Floor(this));
             }
         }
+    }
+    public World()
+    {
+        this(WIDTH, HEIGHT);
     }
 
     public Thing get(int x, int y) {

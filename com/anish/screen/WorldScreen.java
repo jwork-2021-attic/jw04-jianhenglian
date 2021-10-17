@@ -8,7 +8,7 @@ import com.anish.calabashbros.Calabash;
 import com.anish.calabashbros.World;
 
 import asciiPanel.AsciiPanel;
-
+//这个WorldSceen本身使用的是线性排序，但他的一些方法又很有用，啧
 public class WorldScreen implements Screen {
 
     private World world;
@@ -16,7 +16,7 @@ public class WorldScreen implements Screen {
     String[] sortSteps;
 
     public WorldScreen() {
-        world = new World();
+        world = new World(40, 40);
 
         bros = new Calabash[7];
 

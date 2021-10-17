@@ -11,6 +11,7 @@ import com.anish.screen.WorldScreen;
 
 import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;
+import matrix.MatrixScreen;
 
 public class Main extends JFrame implements KeyListener {
 
@@ -19,10 +20,10 @@ public class Main extends JFrame implements KeyListener {
 
     public Main() {
         super();
+        screen = new MatrixScreen();
         terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
         add(terminal);
         pack();
-        screen = new WorldScreen();
         addKeyListener(this);
         repaint();
 
